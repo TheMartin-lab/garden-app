@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Advice</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
+        .input-group { margin-bottom: 1rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
+        input, select, button { padding: 0.5rem; font-size: 1rem; }
+        button { background-color: #2e8b57; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #277549; }
+        .result-section { margin-top: 2rem; padding: 1rem; background-color: #f0f8f0; border-radius: 5px; display: none; }
+        .result-section h2 { margin-top: 0; color: #2e8b57; }
+    </style>
+</head>
+<body>
+    <h1>Garden Advice Program</h1>
+    <p>Enter your details below to get gardening tips and recommendations.</p>
+
+    <div class="input-group">
+        <label for="season">Season:</label>
+        <select id="season">
+            <option value="summer">Summer</option>
+            <option value="winter">Winter</option>
+            <option value="spring">Spring</option>
+            <option value="autumn">Autumn</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label for="plantType">Plant Type:</label>
+        <select id="plantType">
+            <option value="flower">Flower</option>
+            <option value="vegetable">Vegetable</option>
+            <option value="herb">Herb</option>
+            <option value="tree">Tree</option>
+        </select>
+    </div>
+
+    <button onclick="provideAdvice()">Get Advice</button>
+
+    <div id="results" class="result-section">
+        <h2>Gardening Advice</h2>
+        <p id="adviceOutput" style="white-space: pre-line;"></p>
+        
+        <h2>Recommended Plants</h2>
+        <p id="recommendationOutput"></p>
+    </div>
+
+    <script src="garden_advice.js"></script>
+</body>
+</html>
