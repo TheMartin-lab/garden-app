@@ -37,8 +37,20 @@ def main():
     Main function to handle user interaction and display advice.
     """
     # Get values for the season and plant type from the user
-    season = input("Enter the season (summer/winter): ").lower()
-    plant_type = input("Enter the plant type (flower/vegetable): ").lower()
+    valid_seasons = ["summer", "winter"]
+    valid_plants = ["flower", "vegetable"]
+    
+    season = ""
+    while season not in valid_seasons:
+        season = input(f"Enter the season ({'/'.join(valid_seasons)}): ").lower()
+        if season not in valid_seasons:
+            print("Invalid season. Please try again.")
+
+    plant_type = ""
+    while plant_type not in valid_plants:
+        plant_type = input(f"Enter the plant type ({'/'.join(valid_plants)}): ").lower()
+        if plant_type not in valid_plants:
+            print("Invalid plant type. Please try again.")
 
     # Get advice
     season_advice = get_season_advice(season)
